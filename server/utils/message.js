@@ -17,6 +17,7 @@ const generateLocationMessage = (from, lat, long) => {
   }
 }
 
+
 module.exports={
   generateMessage,
   generateLocationMessage
