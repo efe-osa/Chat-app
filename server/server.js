@@ -26,16 +26,13 @@ io.on('connection', (socket) => {
       }
       
       if (users.getUser(null, name, chatRoom) !== undefined) {
-        return callback(`You are already in this ${chatRoom.toUpperCase()} chatroom`)
+        return callback(`You are already in ${chatRoom.toUpperCase()} chatroom`)
       }
 
       socket.join(chatRoom)
       users.removeUser(socket.id)
       users.addUser(socket.id, name, chatRoom)
-        
       
-      // 
-
       io.to(chatRoom).emit('updateUserList', users.getAllUsers(chatRoom))
       //  Emits a message to everyone including the sender
       socket.emit( 'newMessage', generateMessage('Admin','Welcome to the Chat app') )
