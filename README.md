@@ -3,7 +3,7 @@
 ### *A communication platform for two or more people.*
 
 #### Technology
-Node Js, Mutstache
+Node Js, Mustache
 
 ## Getting Started
 - Clone repo
